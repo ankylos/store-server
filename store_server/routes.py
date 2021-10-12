@@ -1,3 +1,5 @@
+import os
+
 from flask import Blueprint, request
 import pymongo
 
@@ -9,12 +11,14 @@ def index():
 
 @main.route('/webhook', methods=['POST'])
 def receive_webhook():
+    webhook_key = os.getenv('key', '')
+
     key = request.GET.get('key', '')
 
     if not key:
         return 'Invalid Request', 403
 
-    if key != 'ef47e2f3d598da95dd183c059a0baedf':
+    if key != webhook_key:
         return 'Invalid Credentials', 403
 
     return 'OK', 200
