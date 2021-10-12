@@ -10,6 +10,7 @@ pymongo = "*"
 dnspython = "*"
 gunicorn = "*"
 python-dotenv = "*"
+celery = "*"
 
 [dev-packages]
 
