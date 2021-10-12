@@ -9,6 +9,7 @@ pika = "*"
 pymongo = "*"
 dnspython = "*"
 gunicorn = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
