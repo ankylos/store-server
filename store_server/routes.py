@@ -13,7 +13,7 @@ def index():
 def receive_webhook():
     webhook_key = os.getenv('key', '')
 
-    key = request.GET.get('key', '')
+    key = request.args.get('key', '')
 
     if not key:
         return 'Invalid Request', 403
